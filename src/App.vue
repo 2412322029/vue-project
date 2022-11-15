@@ -1,4 +1,6 @@
 <script>
+import bar from "./components/Bar.vue"
+import foot from "./components/footer.vue"
 import { getCurrentInstance } from "vue";
 export default {
   data() {
@@ -7,7 +9,11 @@ export default {
         code: null,
         msg: null,
         data: null
-      }
+      },
+      www: "fff",
+      inputx: null,
+      sex: [],
+      ani: []
     }
   },
   methods: {
@@ -23,32 +29,45 @@ export default {
     }
   },
   created() {
-    this.gettoshow()
+    // this.gettoshow()
+  },
+  components: {
+    bar,
+    foot
   }
 }
 </script>
 
+
 <template>
-  <p>{{ show.code }},{{ show.msg }}</p>
-  <div v-if="show.code == 200">
-    <template v-for="item in show.data">
-      <div>
-        <img :src="item.avatar" alt="" id="avatar">
-      <p>comment_count:{{ item.comment_count }}</p>
-      <p>{{ item.data }}</p>
-      <p>{{ item.id }}</p>
-      <img :src="item.imgurl" alt="" id="imgurl">
-      <p>{{ item.imgurl }}</p>
-      <p>{{ item.name }}</p>
-      <p>{{ item.time }}</p>
-      <p>{{ item.title }}</p>
-      </div>
-    </template>
+  <div id="header">
+    <bar></bar>
   </div>
+  <hr id="dd">
+  <div id="main">
+    
+    <!-- 路由出口 -->
+    <router-view></router-view>
+
+  </div>
+
+  <foot></foot>
 </template>
 
 <style>
 img {
   width: 50px;
+}
+
+#ss {
+  border: 1px solid white;
+}
+
+#dd {
+
+  display: block;
+  border-top: 0.4em solid #818BC5;
+  border-bottom: 0.4em solid #BE81C5;
+
 }
 </style>
