@@ -1,5 +1,14 @@
 @import './base.css';
 
+@font-face {
+  font-family: 'Smiley Sans';
+  src: url('SmileySans-Oblique.ttf.woff2') format(woff2);
+}
+
+* {
+  font-family: Smiley Sans;
+}
+
 a {
   text-decoration: none;
   color: #BE81C5;
@@ -8,6 +17,11 @@ a {
 a:hover {
   color: #BE81C5;
 
+}
+
+body {
+  margin-right: calc(100% - 100vw);
+  overflow-x: hidden;
 }
 
 #app {
@@ -31,7 +45,7 @@ a:hover {
   border-bottom-left-radius: 0.5em;
   color: #363636;
   overflow-x: auto;
-  min-height: 200px;
+  min-height: 700px;
 }
 
 footer {
@@ -44,10 +58,29 @@ footer {
   margin: auto
 }
 
+
+input {
+  width: 250px;
+  height: 35px;
+  margin-top: 9px;
+  padding: 0 12px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #3d3d3d;
+  -moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1) inset;
+  -webkit-box-shadow: 0 2px 3px 0 rgb(0 0 0 / 10%) inset;
+  box-shadow: 0 2px 3px 0 rgb(0 0 0 / 10%) inset;
+  font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #020101;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+}
+
 @media (min-width: 1024px) {
 
   #app {
-    max-width: 76em;
+    max-width: 70em;
 
   }
 }

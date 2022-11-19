@@ -5,7 +5,15 @@ export default {
     return {
       title: "w"
     }
-
+  },
+  methods:{
+    ison(){
+      if(localStorage.getItem('username')!=null && localStorage.getItem('username')!=""){
+        return true
+      }else{
+        return false
+      }
+    }
   }
 }
 
@@ -14,17 +22,23 @@ export default {
 <template>
 
   <h1>
-    <router-link to="/">hello</router-link>
+    <router-link to="/" >Griseo</router-link>
   </h1>
 
   <nav>
     <ul>
 
       <li>
-        <router-link to="/about">Go to About</router-link>
+        <router-link to="/about">About</router-link>
       </li>
-      <li>
-        <router-link to="/user/123">Go to user</router-link>
+
+      
+      <li v-if="ison()" id="adminbar">
+        <router-link to="/admin">admin</router-link>
+      </li>
+
+      <li >
+        <router-link to="/login">Login</router-link>
       </li>
     </ul>
   </nav>
